@@ -1,0 +1,50 @@
+### Check MongoDB Connection
+GET http://localhost:5001/check
+
+### Get all movies
+GET http://localhost:5001/api/movies
+
+### Create new movie - Star Wars
+POST http://localhost:5001/api/movies
+Content-Type: application/json
+
+{
+    "id": "1",
+    "title": "Star Wars",
+    "year": 1977,
+    "summary": "A new hope",
+    "actors": ["Mark Hamill", "Harrison Ford"]
+}
+
+### Create new movie - The Matrix
+POST http://localhost:5001/api/movies
+Content-Type: application/json
+
+{
+    "id": "2",
+    "title": "The Matrix",
+    "year": 1999,
+    "summary": "Reality is not what it seems",
+    "actors": ["Keanu Reeves", "Laurence Fishburne"]
+}
+
+### Get movie by ID
+GET http://localhost:5001/api/movies/1
+
+### Update movie
+PUT http://localhost:5001/api/movies/1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "title": "Star Wars: Episode IV - A New Hope",
+    "year": 1977,
+    "summary": "Updated summary",
+    "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher"]
+}
+
+### Delete movie
+DELETE http://localhost:5001/api/movies/2
+
+### Test 404 - Non-existent movie
+GET http://localhost:5001/api/movies/999
